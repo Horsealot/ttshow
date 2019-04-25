@@ -23,6 +23,10 @@ footer {
   font-size: 18px;
   font-weight: 200;
   color: rgba(255,255,255,0.6);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .homepage {
@@ -32,13 +36,12 @@ footer {
   background: -webkit-radial-gradient(center, ellipse cover, #343245 0%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
   background: radial-gradient(ellipse at center, #343245 0%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#343245', endColorstr='#000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  margin-bottom: 300px;
   color: white;
-  z-index: -1;
+  z-index: 1;
   overflow: hidden;
 
   header {
@@ -64,7 +67,7 @@ footer {
     h1 {
       font-weight: 100;
       color: rgba(255, 255, 255, 0.6);
-      font-size: 36px;
+      font-size: 32px;
       letter-spacing: 1.5px;
     }
   }
@@ -77,56 +80,81 @@ footer {
   .star {
     &-1 {
       position: absolute;
-      top: 211px;
-      left: 196px;
+      //top: 211px;
+      //left: 196px;
+      //z-index: 1;
+      //width: 4000px;
+      top: calc(100% - 300px);
+      height: 600px;
+      transform-origin: 1500px 1600px;
+      left: calc(100% - 1300px);
       z-index: 1;
-      width: 4000px;
       animation: animation-1 ease-in-out 40s;
       animation-iteration-count: infinite;
     }
     &-2 {
       position: absolute;
-      top: -1201px;
-      left: 1030px;
+      //top: -1201px;
+      //left: calc(100% - 330px);
+      //z-index: 2;
+      //width: 4000px;
+      left: calc(100% - 220px);
+      top: -500px;
+      transform-origin: 1500px 1200px;
+      height: 1900px;
       z-index: 2;
-      width: 4000px;
       animation: animation-2 ease-in-out 50s;
       animation-iteration-count: infinite;
     }
     &-3 {
       position: absolute;
-      top: -3638px;
-      left: -329px;
+      //top: -3638px;
+      //left: -329px;
+      //width: 4000px;
+      top: -530px;
+      left: calc(100% - 1800px);
+      height: 700px;
+      transform-origin: 1500px -1200px;
       z-index: 3;
-      width: 4000px;
       animation: animation-3 ease-in-out 30s;
       animation-iteration-count: infinite;
     }
     &-4 {
       position: absolute;
-      top: 648px;
-      left: -2205px;
-      z-index: 1;
-      width: 4000px;
+      //top: 648px;
+      //left: -2205px;
+      //z-index: 1;
+      //width: 4000px;
+      top: calc(100% - 800px);
+      left: -900px;
+      z-index: 5;
+      height: 2000px;
+      transform-origin: 0px 2000px;
       //transform: rotateZ(-5deg);
       animation: animation-4 ease-in-out 30s;
       animation-iteration-count: infinite;
     }
     &-5 {
       position: absolute;
-      top: -100px;
-      left: -3412px;
-      z-index: 1;
-      width: 4000px;
+      top: calc(100% - 280px);
+      left: -1000px;
+      z-index: 4;
+      height: 900px;
+      transform-origin: 1000px 2000px;
       animation: animation-5 ease-in-out 40s;
       animation-iteration-count: infinite;
     }
     &-6 {
       position: absolute;
-      top: -2443px;
-      left: -3601px;
-      z-index: 1;
-      width: 4000px;
+      top: -1300px;
+      left: -350px;
+      z-index: 6;
+      width: 800px;
+      transform-origin: -1000px 1000px;
+      //top: -2443px;
+      //left: -3601px;
+      //z-index: 1;
+      //width: 4000px;
       animation: animation-6 ease-in-out 50s;
       animation-iteration-count: infinite;
     }
@@ -135,25 +163,25 @@ footer {
 
 @keyframes animation-1 {
   0% {
-    transform: rotate(10deg);
+    transform: rotate(5deg);
   }
   50% {
-    transform: rotate(-10deg);
+    transform: rotate(-5deg);
   }
   100% {
-    transform: rotate(10deg);
+    transform: rotate(5deg);
   }
 }
 
 @keyframes animation-2 {
   0% {
-    transform: rotate(-7deg);
-  }
-  50% {
     transform: rotate(7deg);
   }
+  50% {
+    transform: rotate(20deg);
+  }
   100% {
-    transform: rotate(-7deg);
+    transform: rotate(7deg);
   }
 }
 
@@ -162,7 +190,7 @@ footer {
     transform: rotate(10deg);
   }
   50% {
-    transform: rotate(-10deg);
+    transform: rotate(0deg);
   }
   100% {
     transform: rotate(10deg);
@@ -171,13 +199,13 @@ footer {
 
 @keyframes animation-4 {
   0% {
-    transform: rotateZ(-5deg);
+    transform: rotateZ(15deg);
   }
   50% {
-    transform: rotateZ(-10deg);
+    transform: rotateZ(0deg);
   }
   100% {
-    transform: rotateZ(-5deg);
+    transform: rotateZ(15deg);
   }
 }
 
@@ -186,7 +214,7 @@ footer {
     transform: rotate(-10deg);
   }
   50% {
-    transform: rotate(10deg);
+    transform: rotate(0deg);
   }
   100% {
     transform: rotate(-10deg);
