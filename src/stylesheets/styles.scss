@@ -70,12 +70,29 @@ footer {
       color: rgba(255, 255, 255, 0.6);
       font-size: 32px;
       letter-spacing: 1.5px;
+
+      animation: main-title-appear cubic-bezier(0, 0, 0.07, 1.43) 1s;
+      animation-delay: 1.3s;
+      opacity: 0;
+      -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
+      animation-fill-mode: forwards;
     }
   }
 
   .show-logo {
-    width: 400px;
-    max-width: 80%;
+    &__opacity-container {
+      animation: content-appear ease-out 0.5s;
+      animation-delay: 1s;
+      opacity: 0;
+      -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
+      animation-fill-mode: forwards;
+      &__image-container {
+        width: 400px;
+        max-width: 80%;
+        animation: logo-appear cubic-bezier(0.15, 0.35, 0, 1) 2s;
+        animation-delay: 1s;
+      }
+    }
   }
 
   .star {
@@ -159,6 +176,38 @@ footer {
       animation: animation-6 ease-in-out 50s;
       animation-iteration-count: infinite;
     }
+  }
+}
+
+
+@keyframes main-title-appear {
+  0% {
+    transform: translateY(-50px) scale(0.3);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes content-appear {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes logo-appear {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(720deg);
   }
 }
 
